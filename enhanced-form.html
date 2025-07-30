@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin-bottom: 20px;
+    }
+    header, footer {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: inline-flex;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+    }
+    .gender {
+        display: inline-flex;
+        gap: 20px;
+    }
+    .radio {
+        margin-top: 10px;;
+    }
+    .country {
+        display: block;
+    }
+    .center {
+        text-align: center;
+    }
+    .file {
+        text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>User Registration Portal</h1>
+    <p>Welcome! Please fill out the form below.</p>
+  </header>
+
+  <main>
+    <section class="center">
+      <h2>Form Instructions</h2>
+      <ul>
+        <li class="ins">All fields marked with * are required.</li>
+        <li class="ins">Use a valid email address.</li>
+        <li class="ins">Passwords must be at least 6 characters long.</li>
+      </ul>
+    </section>
+
+    <section class="center">
+      <h2>Registration Form</h2>
+    </section>
+   
+        <form action="/submit" method="POST" autocomplete="on">
+        <label for="fullname">Full Name *</label>
+        <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" minlength="6" required>
+
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <div class="gender">
+        <label>Gender*</label>
+        <input class="radio"  type="radio" id="male" name="gender" value="male" required>
+        <label for="male" >Male</label>
+        <input class="radio"  type="radio" id="female" name="gender" value="female">
+        <label  for="female" >Female</label>
+        <input  class="radio" type="radio" id="other" name="gender" value="other">
+        <label for="other" >Other</label>
+        </div>
+
+
+        <label class="country" for="country">Country *</label>
+        <select id="country" name="country" required>
+          <option value="">-- Select --</option>
+          <option value="ni">Nigeria</option>
+          <option value="ke">Kenya</option>
+          <option value="sa">South Africa</option>
+        </select>
+
+        <label for="bio">Short Bio</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+
+        <div class="gender">
+        <label for="interests">Interests</label>
+        <input class="radio" type="checkbox" id="sports" name="interests" value="sports">
+        <label for="sports" style="display:inline;">Sports</label>
+        <input class="radio"  type="checkbox" id="music" name="interests" value="music">
+        <label for="music" style="display:inline;">Music</label>
+        <input class="radio"  type="checkbox" id="tech" name="interests" value="tech">
+        <label for="tech" style="display:inline;">Technology</label>
+
+        </div>
+        
+        <label for="referral">Referral Code</label>
+        <input type="text" id="referral" name="referral" value="AUTO1234" readonly>
+
+        <label for="profile-pic">Upload Profile Picture</label>
+        <input class="file" type="file" id="profile-pic" name="profile-pic" accept="image/*">
+
+        <button type="submit" style="margin-top: 15px;">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Subscription Plans</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Features</th>
+            <th>Price (Monthly)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>Access to articles</td>
+            <td>$5</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>Articles + Videos</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <t
